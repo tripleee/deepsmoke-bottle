@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from bottle import Bottle, route, request, post, app
+from bottle import Bottle, route, request, app
 import keras
 from DeepSPADE import data_helpers
 
@@ -11,9 +11,9 @@ app = Bottle()
 def index():
     return 'The main HTTP API is a POST request on /spam with JSON {"body": "text"}'
 
-@app.post('/spam')
+@app.route('/spam')
 def spam():
-    body = request.json['body'][0:270]
+    body = request.query.body
     filtered = data_helpers.filterinput(body)
     score = float(app.model.predict(filtered))
     result = round(score) == 1.0

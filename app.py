@@ -27,7 +27,7 @@ def main():
     except IndexError:
         host = '0.0.0.0'
     app.model = keras.models.load_model('save_ensemble3_1.h5')
-    app.run(host=host, port=8888)
+    app.run(host=host, port=8080)
 
 
 if __name__ == '__main__':

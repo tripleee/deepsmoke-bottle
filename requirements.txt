@@ -1,1 +1,7 @@
 bottle
+# The DeepSpaDe dependencies should be in DeepSPADE/requirements.txt
+# but aren't yet.
+numpy
+tensorflow
+keras
+h5py

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cat <<____>&2
+$0: This is not really useful to execute if you have downloaded the Git project.
+It is included here as brief documentation so I can retrace my steps.
+____
+exit 1
+
+git submodule add https://github.com/tanmayb123/DeepSPADE
+# caution: no longer exists
+curl -O https://3578e722.ngrok.io/save_ensemble3_1.h5
+
+pip install -r requirements.txt
+# for now, until upstream can add a proper requirements.txt
+: pip install -r DeepSPADE/requirements.txt
+pip install --binary-only :all: numpy
+pip install tensorflow keras
+pip install h5py

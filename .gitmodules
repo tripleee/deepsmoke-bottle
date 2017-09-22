@@ -1,0 +1,3 @@
+[submodule "DeepSPADE"]
+	path = DeepSPADE
+	url = https://github.com/tanmayb123/DeepSPADE
